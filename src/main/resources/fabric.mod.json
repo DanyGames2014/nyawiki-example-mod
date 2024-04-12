@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "examplemod",
+  "version": "${version}",
+
+  "name": "NyaWiki Example Mod",
+  "description": "This is an example mod for NyaWiki",
+  "authors": [
+    "DanyGames2014"
+  ],
+  "contact": {
+    "homepage": "https://danygames2014.github.io/nyawiki/"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/examplemod/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "stationapi:event_bus": [
+      "net.danygames2014.examplemod.ExampleMod"
+    ],
+    "stationapi:event_bus_client": [
+    ],
+    "stationapi:event_bus_server": [
+    ]
+  },
+  "mixins": [
+    "examplemod.mixins.json"
+  ],
+
+  "depends": {
+    "minecraft": "1.0.0-beta.7.3"
+  }
+}
