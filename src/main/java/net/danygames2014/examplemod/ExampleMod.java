@@ -3,10 +3,13 @@ package net.danygames2014.examplemod;
 import net.danygames2014.examplemod.block.ExampleBlock;
 import net.danygames2014.examplemod.block.ExampleBlockWithProperty;
 import net.danygames2014.examplemod.item.AngryBlockDetector;
+import net.danygames2014.examplemod.item.ExampleItem;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.Item;
+import net.modificationstation.stationapi.api.client.event.texture.TextureRegisterEvent;
+import net.modificationstation.stationapi.api.event.mod.InitEvent;
 import net.modificationstation.stationapi.api.event.registry.BlockRegistryEvent;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
@@ -27,6 +30,7 @@ public class ExampleMod {
 
     // Items
     public static Item angryBlockDetector;
+    public static Item exampleItem;
 
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
@@ -37,5 +41,11 @@ public class ExampleMod {
     @EventListener
     public void registerItems(ItemRegistryEvent event){
         angryBlockDetector = new AngryBlockDetector(NAMESPACE.id("angry_block_detector")).setTranslationKey(NAMESPACE, "angry_block_detector");
+        exampleItem = new ExampleItem(NAMESPACE.id("example_item")).setTranslationKey(NAMESPACE, "example_item");
+    }
+
+    @EventListener
+    public void registerTextures(TextureRegisterEvent event) {
+        ExampleMod.exampleItem.setTexture(NAMESPACE.id("item/example_item"));
     }
 }
