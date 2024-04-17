@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "examplemod:example_item"
+  },
+  "result": {
+    "item": "minecraft:dye",
+    "count": 8,
+    "damage": 2
+  }
+}

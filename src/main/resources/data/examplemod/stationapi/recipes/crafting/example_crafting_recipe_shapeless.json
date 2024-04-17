@@ -2,13 +2,15 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:diamond_block"
+      "item": "minecraft:dye",
+      "damage": 4
+    },
+    {
+      "item": "minecraft:dye",
+      "damage": 4
     },
     {
       "tag": "minecraft:logs"
-    },
-    {
-      "item": "examplemod:example_item"
     },
     {
       "item": "examplemod:example_item"
