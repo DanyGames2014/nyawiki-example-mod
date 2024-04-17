@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond_block"
+    },
+    {
+      "tag": "minecraft:logs"
+    },
+    {
+      "item": "examplemod:example_item"
+    },
+    {
+      "item": "examplemod:example_item"
+    }
+  ],
+  "result": {
+    "item": "examplemod:example_block"
+  }
+}

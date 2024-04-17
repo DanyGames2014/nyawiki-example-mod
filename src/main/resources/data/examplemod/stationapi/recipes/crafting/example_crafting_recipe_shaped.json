@@ -1,29 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern":
-  [
+  "pattern": [
     "owo",
     "w w",
     "uwu"
   ],
-  "key":
-  {
-    "o":
-    {
+  "key": {
+    "o": {
       "item": "minecraft:obsidian"
     },
-    "w":
-    {
+    "w": {
       "item": "minecraft:dye",
       "damage": 7
     },
-    "u":
-    {
+    "u": {
       "tag": "minecraft:logs"
     }
   },
-  "result":
-  {
+  "result": {
     "item": "examplemod:example_item",
     "count": 8
   }
