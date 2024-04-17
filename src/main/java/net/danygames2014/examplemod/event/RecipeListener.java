@@ -6,6 +6,6 @@ import net.modificationstation.stationapi.api.event.recipe.RecipeRegisterEvent;
 public class RecipeListener {
     @EventListener
     public void registerRecipes(RecipeRegisterEvent event){
-
+        RecipeRegisterEvent.Vanilla type = RecipeRegisterEvent.Vanilla.fromType(event.recipeId);
     }
 }
