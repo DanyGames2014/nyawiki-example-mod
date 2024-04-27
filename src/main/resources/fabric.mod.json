@@ -18,7 +18,8 @@
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [
-      "net.danygames2014.examplemod.ExampleMod"
+      "net.danygames2014.examplemod.ExampleMod",
+      "net.danygames2014.examplemod.event.RecipeListener"
     ],
     "stationapi:event_bus_client": [
     ],
