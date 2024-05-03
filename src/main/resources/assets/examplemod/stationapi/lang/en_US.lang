@@ -1,1 +1,5 @@
+# Blocks
 tile.example_block.name=Example Block
+
+# Keybinds
+key.examplemod.example_keybind=Example Keybind

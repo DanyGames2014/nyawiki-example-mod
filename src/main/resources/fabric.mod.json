@@ -22,6 +22,8 @@
       "net.danygames2014.examplemod.event.RecipeListener"
     ],
     "stationapi:event_bus_client": [
+      "net.danygames2014.examplemod.event.KeybindListener",
+      "net.danygames2014.examplemod.event.KeyPressListener"
     ],
     "stationapi:event_bus_server": [
     ]

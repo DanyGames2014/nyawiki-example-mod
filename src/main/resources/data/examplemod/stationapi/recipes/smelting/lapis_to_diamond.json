@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:dye",
+    "damage": 4
+  },
+  "result": {
+    "item": "minecraft:diamond"
+  }
+}

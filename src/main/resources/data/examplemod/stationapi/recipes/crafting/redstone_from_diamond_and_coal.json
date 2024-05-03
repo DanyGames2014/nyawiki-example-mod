@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "d",
+    "i"
+  ],
+  "key": {
+    "d": {
+      "item": "minecraft:diamond"
+    },
+    "i": {
+      "tag": "minecraft:coals"
+    }
+  },
+  "result": {
+    "item": "minecraft:redstone",
+    "count": 8
+  }
+}

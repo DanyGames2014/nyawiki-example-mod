@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "minecraft:logs"
+    },
+    {
+      "item": "minecraft:dye",
+      "damage": 4
+    }
+  ],
+  "result": {
+    "item": "minecraft:dye",
+    "damage": 7,
+    "count": 16
+  }
+}
