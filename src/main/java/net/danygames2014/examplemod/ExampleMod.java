@@ -8,15 +8,11 @@ import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.Item;
-import net.modificationstation.stationapi.api.client.event.texture.TextureRegisterEvent;
-import net.modificationstation.stationapi.api.event.datafixer.DataFixerRegisterEvent;
-import net.modificationstation.stationapi.api.event.mod.InitEvent;
 import net.modificationstation.stationapi.api.event.registry.BlockRegistryEvent;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
-import net.modificationstation.stationapi.api.vanillafix.datafixer.schema.StationFlatteningItemStackSchema;
 import org.apache.logging.log4j.Logger;
 
 public class ExampleMod {
@@ -36,7 +32,7 @@ public class ExampleMod {
 
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
-        exampleBlock = new ExampleBlock(NAMESPACE.id("example_block"), Material.WOOD).setTranslationKey(NAMESPACE, "example_block");
+        exampleBlock = new ExampleBlock(NAMESPACE.id("example_block")).setTranslationKey(NAMESPACE, "example_block");
         exampleBlockWithProperty = new ExampleBlockWithProperty(NAMESPACE.id("example_block_with_proerty"), Material.WOOD).setTranslationKey(NAMESPACE, "example_block_with_property");
     }
 
@@ -44,14 +40,5 @@ public class ExampleMod {
     public void registerItems(ItemRegistryEvent event){
         angryBlockDetector = new AngryBlockDetector(NAMESPACE.id("angry_block_detector")).setTranslationKey(NAMESPACE, "angry_block_detector");
         exampleItem = new ExampleItem(NAMESPACE.id("example_item")).setTranslationKey(NAMESPACE, "example_item");
-    }
-
-    @EventListener
-    public void registerTextures(TextureRegisterEvent event) {
-        ExampleMod.exampleItem.setTexture(NAMESPACE.id("item/example_item"));
-    }
-
-    @EventListener
-    public void registerDataFixer(DataFixerRegisterEvent event){
     }
 }
