@@ -1,5 +1,6 @@
 package net.danygames2014.examplemod.block;
 
+import net.danygames2014.examplemod.event.TextureListener;
 import net.minecraft.block.Material;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.Box;
@@ -29,5 +30,19 @@ public class ExampleBlock extends TemplateBlock {
     @Override
     public Box getCollisionShape(World world, int x, int y, int z) {
         return null;
+    }
+
+    @Override
+    public int getTexture(int side, int meta) {
+        if (meta != 0) {
+            return 4;
+        }
+
+        return switch (side) {
+            case 1 -> TextureListener.exampleBlockTexture;
+            case 2 -> 1;
+            case 3 -> 14;
+            default -> 0;
+        };
     }
 }
