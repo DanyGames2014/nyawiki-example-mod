@@ -19,7 +19,8 @@
   "entrypoints": {
     "stationapi:event_bus": [
       "net.danygames2014.examplemod.ExampleMod",
-      "net.danygames2014.examplemod.event.RecipeListener"
+      "net.danygames2014.examplemod.event.RecipeListener",
+      "net.danygames2014.examplemod.event.BiomeListener"
     ],
     "stationapi:event_bus_client": [
       "net.danygames2014.examplemod.event.TextureListener",
