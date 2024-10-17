@@ -1,12 +1,11 @@
 package net.danygames2014.examplemod.block;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Material;
+import net.minecraft.block.material.Material;
 import net.modificationstation.stationapi.api.block.BlockState;
 import net.modificationstation.stationapi.api.item.ItemPlacementContext;
 import net.modificationstation.stationapi.api.state.StateManager;
 import net.modificationstation.stationapi.api.state.property.BooleanProperty;
-import net.modificationstation.stationapi.api.state.property.IntProperty;
 import net.modificationstation.stationapi.api.template.block.TemplateBlock;
 import net.modificationstation.stationapi.api.util.Identifier;
 
@@ -26,7 +25,7 @@ public class ExampleBlockWithProperty extends TemplateBlock {
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext context) {
-        if(context.getPlayer().method_1373()){
+        if(context.getPlayer().isSneaking()){
             return getDefaultState().with(ANGRY, true);
         }
         return getDefaultState().with(ANGRY, false);

@@ -20,9 +20,9 @@ public class AngryBlockDetector extends TemplateItem {
         if(state.isOf(ExampleMod.exampleBlockWithProperty)){
             boolean isAngry = state.get(ExampleBlockWithProperty.ANGRY);
             if(isAngry){
-                player.method_490("The Block do be angry");
+                player.sendMessage("The Block do be angry");
             }else {
-                player.method_490("This block is chill");
+                player.sendMessage("This block is chill");
             }
             return true;
         }
