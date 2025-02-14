@@ -1,7 +1,10 @@
+//file:noinspection GroovyAssignabilityCheck
+//file:noinspection GroovyUnusedAssignment
+//file:noinspection ForeignDelegate
 plugins {
-	id 'fabric-loom' version '1.7.2'
-	id 'babric-loom-extension' version '1.7.3'
 	id 'maven-publish'
+	id 'fabric-loom' version '1.9.2'
+	id 'babric-loom-extension' version '1.9.2'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -12,6 +15,7 @@ version = project.mod_version
 group = project.maven_group
 
 loom {
+	//accessWidenerPath = file("src/main/resources/template.accesswidener")
 }
 
 repositories {
@@ -31,6 +35,12 @@ repositories {
 	maven {
 		name = 'Glass Snapshots'
 		url = 'https://maven.glass-launcher.net/snapshots'
+	}
+
+	// NyaRepo
+	maven {
+		name = "nyarepo"
+		url = "https://maven.fildand.cz/releases"
 	}
 	
 	// Used for a StationAPI dependency.
@@ -64,22 +74,44 @@ dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.glasslauncher:biny:${project.yarn_mappings}:v2"
-	modImplementation "babric:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	implementation "org.slf4j:slf4j-api:1.8.0-beta4"
 	implementation 'org.apache.logging.log4j:log4j-slf4j18-impl:2.17.2'
 	implementation "blue.endless:jankson:1.2.1"
 
+
 	modImplementation "net.modificationstation:StationAPI:${project.stapi_version}"
 
-	// Optional, but convenient mods for mod creators and users alike.
-	modImplementation("com.github.calmilamsy:ModMenu:${project.modmenu_version}") {
+	modImplementation("net.glasslauncher.mods:ModMenu:${project.modmenu_version}") {
 		transitive false
 	}
+
+	modImplementation("net.glasslauncher.mods:glass-networking:${project.glass_networking_version}") {
+		transitive false
+	}
+
 	modImplementation("net.glasslauncher.mods:GlassConfigAPI:${project.gcapi_version}") {
 		transitive false
 	}
-	modImplementation("net.glasslauncher:HowManyItems-Fabric-Unofficial:${project.howmanyitems_version}") {
+
+	modImplementation("net.glasslauncher.mods:AlwaysMoreItems:${project.alwaysmoreitems_version}") {
+		transitive false
+	}
+
+	modImplementation("com.github.matthewperiut:retrocommands:${project.retrocommands_version}") {
+		transitive false
+	}
+
+	modImplementation("net.danygames2014:spawneggs:${project.spawneggs_version}") {
+		transitive false
+	}
+
+	modRuntimeOnly("maven.modrinth:unitweaks:${project.unitweaks_version}-fabric,b1.7.3") {
+		transitive false
+	}
+
+	modRuntimeOnly("maven.modrinth:fast-stapi-intro:2.0.0-fabric,b1.7.3") {
 		transitive false
 	}
 }
