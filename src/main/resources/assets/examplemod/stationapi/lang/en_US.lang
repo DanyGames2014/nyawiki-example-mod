@@ -1,5 +1,6 @@
 # Blocks
-tile.example_block.name=Example Block
+tile.examplemod.example_block.name=Example Block
+tile.examplemod.example_log.name=Example Log
 
 # Keybinds
 key.examplemod.example_keybind=Example Keybind

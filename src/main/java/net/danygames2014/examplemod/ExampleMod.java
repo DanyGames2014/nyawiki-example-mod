@@ -11,20 +11,22 @@ import net.minecraft.item.Item;
 import net.modificationstation.stationapi.api.event.registry.BlockRegistryEvent;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
+import net.modificationstation.stationapi.api.template.block.TemplateBlock;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
 import org.apache.logging.log4j.Logger;
 
 public class ExampleMod {
     @Entrypoint.Namespace
-    public static final Namespace NAMESPACE = Null.get();
+    public static Namespace NAMESPACE;
 
     @Entrypoint.Logger
-    public static final Logger LOGGER = Null.get();
+    public static Logger LOGGER = Null.get();
 
     // Blocks
     public static Block exampleBlock;
     public static Block exampleBlockWithProperty;
+    public static Block exampleLog;
 
     // Items
     public static Item angryBlockDetector;
@@ -34,6 +36,7 @@ public class ExampleMod {
     public void registerBlocks(BlockRegistryEvent event) {
         exampleBlock = new ExampleBlock(NAMESPACE.id("example_block")).setTranslationKey(NAMESPACE, "example_block");
         exampleBlockWithProperty = new ExampleBlockWithProperty(NAMESPACE.id("example_block_with_proerty"), Material.WOOD).setTranslationKey(NAMESPACE, "example_block_with_property");
+        exampleLog = new TemplateBlock(NAMESPACE.id("example_log"), Material.WOOD).setTranslationKey(NAMESPACE, "example_log").setSoundGroup(Block.WOOD_SOUND_GROUP).setHardness(0.5F); 
     }
 
     @EventListener
