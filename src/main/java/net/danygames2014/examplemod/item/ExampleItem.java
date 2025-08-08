@@ -1,6 +1,8 @@
 package net.danygames2014.examplemod.item;
 
 import net.danygames2014.examplemod.network.ExamplePacket;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -21,7 +23,7 @@ public class ExampleItem extends TemplateItem {
 
     @Override
     public boolean useOnBlock(ItemStack stack, PlayerEntity user, World world, int x, int y, int z, int side) {
-        if (world.isRemote) {
+        if (FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT) {
             if (user.isSneaking()) {
                 PacketHelper.send(new ExamplePacket(x, y, z, "This is a message sent from client"));
             }
