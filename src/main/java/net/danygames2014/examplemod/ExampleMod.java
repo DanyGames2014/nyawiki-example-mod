@@ -35,7 +35,7 @@ public class ExampleMod {
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
         exampleBlock = new ExampleBlock(NAMESPACE.id("example_block")).setTranslationKey(NAMESPACE, "example_block");
-        exampleBlockWithProperty = new ExampleBlockWithProperty(NAMESPACE.id("example_block_with_proerty"), Material.WOOD).setTranslationKey(NAMESPACE, "example_block_with_property");
+        exampleBlockWithProperty = new ExampleBlockWithProperty(NAMESPACE.id("example_block_with_property"), Material.WOOD).setTranslationKey(NAMESPACE, "example_block_with_property");
         exampleLog = new TemplateBlock(NAMESPACE.id("example_log"), Material.WOOD).setTranslationKey(NAMESPACE, "example_log").setSoundGroup(Block.WOOD_SOUND_GROUP).setHardness(0.5F);
     }
 

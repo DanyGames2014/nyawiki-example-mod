@@ -216,5 +216,5 @@ static def fetchLatestVersion(String artifactUrl) {
 		return null
 	}
 
-	return latestVersion;
+	return latestVersion
 }
