@@ -75,7 +75,7 @@ public class ExamplePacket extends Packet implements ManagedPacket<ExamplePacket
         PlayerEntity player = PlayerHelper.getPlayerFromPacketHandler(networkHandler);
         World world = player.world;
 
-        world.setBlockStateWithNotify(x, y, z, States.AIR.get());
+        world.setBlockState(x, y, z, States.AIR.get());
         player.sendMessage("Block removed. Hello from Client");
     }
 
@@ -84,7 +84,7 @@ public class ExamplePacket extends Packet implements ManagedPacket<ExamplePacket
         PlayerEntity player = PlayerHelper.getPlayerFromPacketHandler(networkHandler);
         World world = player.world;
 
-        world.setBlockStateWithNotify(x, y, z, States.AIR.get());
+        world.setBlockState(x, y, z, States.AIR.get());
         player.sendMessage("Block removed. Hello from Server");
     }
 
